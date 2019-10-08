@@ -41,9 +41,9 @@ salmonCookieShopOne.randomNumberGenerator();
 salmonCookieShopOne.render();
 
 
-var parentEl = document.getElementById('parentElement');
+parentEl = document.getElementById('parentElement');
 
-var child = document.createElement('h1');
+child = document.createElement('h1');
 child.textContent = 'Tokyo: ';
 parentEl.appendChild(child);
 
@@ -76,9 +76,9 @@ var salmonCookieShopTwo = {
 salmonCookieShopTwo.randomNumberGenerator();
 salmonCookieShopTwo.render();
 
-var parentEl = document.getElementById('parentElement');
+parentEl = document.getElementById('parentElement');
 
-var child = document.createElement('h1');
+child = document.createElement('h1');
 child.textContent = 'Dubai: ';
 parentEl.appendChild(child);
 
@@ -111,9 +111,9 @@ var salmonCookieShopThree = {
 salmonCookieShopThree.randomNumberGenerator();
 salmonCookieShopThree.render();
 
-var parentEl = document.getElementById('parentElement');
+parentEl = document.getElementById('parentElement');
 
-var child = document.createElement('h1');
+child = document.createElement('h1');
 child.textContent = 'Paris: ';
 parentEl.appendChild(child);
 
@@ -147,9 +147,9 @@ salmonCookieShopFourth.randomNumberGenerator();
 salmonCookieShopFourth.render();
 
 
-var parentEl = document.getElementById('parentElement');
+parentEl = document.getElementById('parentElement');
 
-var child = document.createElement('h1');
+child = document.createElement('h1');
 child.textContent = 'Lima: ';
 parentEl.appendChild(child);
 
@@ -162,7 +162,7 @@ var salmonCookieShopFifth = {
   avgCookie: 4.6,
   sumRandoms: 0,
   randomNumberGenerator: function (min, max) {
-    // return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust * this.avgCookie);
+
     var rand = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust * this.avgCookie);
     this.sumRandoms += rand;
     return rand;
