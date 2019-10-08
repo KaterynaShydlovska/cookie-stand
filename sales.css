@@ -1,0 +1,22 @@
+html{
+  background-color: rgb(172, 163, 163);
+}
+body{
+  border: 1px solid rgb(73, 65, 65);
+  border-radius: 5%;
+  background-color: bisque;
+  padding-bottom: 30px;
+  
+}
+
+button{
+   width: 100px;
+    height: 30px;
+    border-radius: 15%;
+    position: relative;
+    
+}
+button:hover {
+    background-color:orange; 
+    color: white;
+  }
