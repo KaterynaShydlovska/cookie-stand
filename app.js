@@ -31,15 +31,14 @@ renderHeaderRow();
 var allShops = [];
 // class shop
 function Shop(location, minCust, maxCust, avgCookie) {
-  // this.shopHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+
   this.location = location;
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgCookie = avgCookie;
   this.cookiePerHour = [];
   this.dailyLocationTotal = 0;
-  // this.cookiePerHour;
-  // add to the list of shops
+
   // count cookies
   this.countCookie = function () {
     for (var i = 0; i < shopHours.length; i++) {
@@ -85,8 +84,7 @@ var tokyo = new Shop('Tokyo', 3, 24, 1.2);
 var dubai = new Shop('Dubai', 11, 38, 3.7);
 var paris = new Shop('Paris', 20, 38, 2.3);
 var lima = new Shop('Lima', 2, 16, 4.6);
-// seattle.cookiePerHour();
-// seattle.totalPerDay();
+
 seattle.render();
 tokyo.render();
 dubai.render();
@@ -131,25 +129,38 @@ function handleSubmit(event) {
 
   console.log('event.target.inputElementNewLocation.value:', event.target.inputElementNewLocation.value);
 
+
   this.location = event.target.inputElementNewLocation.value;
   this.minCust = event.target.inputElementMinimumCustomers.value;
   this.maxCust = event.target.inputElementMaximumCustomers.value;
   this.avgCookie = event.target.inputElementMaximumCustomers.value;
 
+  var newLocation = new Shop(this.location, this.minCust, this.maxCust, this.avgCookie);
+  allShops.push(newLocation);
 
-  if (isNaN(this.minCust)) {
-    alert('Please enter a number');
-    event.target.inputElementMinimumCustomers.value = null;
+  tableBody.removeChild(tableBody.lastChild);
 
-  }
-  if (isNaN(this.maxCust)) {
-    alert('Please enter a number');
-    event.target.inputElementMaximumCustomers.value = null;
+  newLocation.render();
 
-  }
-  if (isNaN(this.avgCookie)) {
-    alert('Please enter a number');
-    event.target.event.target.inputElementMaximumCustomers.value = null;
-  }
+  totalRow();
+
   alert(`New location is ${this.location} and the numbers of minimum customers: ${this.minCust}, maximum customers: ${this.maxCust}, average cookies: ${this.avgCookie}`);
 }
+
+//used validation instead those functions
+// if (isNaN(this.minCust)) {
+//   alert('Please enter a number');
+//   event.target.inputElementMinimumCustomers.value = null;
+
+// }
+// if (isNaN(this.maxCust)) {
+//   alert('Please enter a number');
+//   event.target.inputElementMaximumCustomers.value = null;
+
+// }
+// if (isNaN(this.avgCookie)) {
+//   alert('Please enter a number');
+//   event.target.event.target.inputElementMaximumCustomers.value = null;
+// }
+
+
