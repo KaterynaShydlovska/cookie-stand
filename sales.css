@@ -20,3 +20,8 @@ button:hover {
     background-color:orange; 
     color: white;
   }
+td, th {
+  display: inline-block;
+  width: 80px;
+  margin: 10px 0px 10px 0px;
+}

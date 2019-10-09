@@ -10,8 +10,6 @@ body{
   border-radius: 5%;
   height: 700px;
   background-color: bisque;
-
- 
 }
 img{
   height: 150px;
@@ -48,6 +46,3 @@ button:hover {
     color: white;
   }
 
-}
-
-}
