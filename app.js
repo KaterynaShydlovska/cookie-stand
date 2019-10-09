@@ -80,22 +80,6 @@ Shop.prototype.render = function(){
   tableBody.appendChild(trEl);
 };
 
-
-
-//   this.randomNumberGenerator = function (minCust, maxCust) {
-
-//     var rand = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust * this.avgCookie);
-
-//     this.sumRandoms += rand;
-//     return rand;
-//   }
-// };
-
-// Shop.prototype.renderCookies = function (){
-//   console.log(`${this.location}`);
-// };
-
-
 var seattle = new Shop('Seattle', 23, 65, 6.3);
 var tokyo = new Shop('Tokyo', 3, 24, 1.2);
 var dubai = new Shop('Dubai', 11, 38, 3.7);
@@ -128,7 +112,7 @@ var totalRow = function () {
   var finalTotal = 0;
   for (var k = 0; k < allShops.length; k++) {
     finalTotal += allShops[k].dailyLocationTotal;
-  };
+  }
   var lastRow = document.createElement('td');
   lastRow.textContent = finalTotal;
   trEl.appendChild(lastRow);
