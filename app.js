@@ -19,7 +19,7 @@ var salmonCookieShopOne = {
   maxCust: 65,
   avgCookie:6.3,
   sumRandoms: 0,
-  randomNumberGenerator: function (min, max) {
+  randomNumberGenerator: function () {
     // return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust * this.avgCookie);
     var rand = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust * this.avgCookie);
     this.sumRandoms += rand;
@@ -55,7 +55,7 @@ var salmonCookieShopTwo = {
   maxCust: 24,
   avgCookie: 1.2,
   sumRandoms: 0,
-  randomNumberGenerator: function (min, max) {
+  randomNumberGenerator: function () {
     // return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust * this.avgCookie);
     var rand = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust * this.avgCookie);
     this.sumRandoms += rand;
@@ -90,7 +90,7 @@ var salmonCookieShopThree = {
   maxCust: 38,
   avgCookie: 3.7,
   sumRandoms: 0,
-  randomNumberGenerator: function (min, max) {
+  randomNumberGenerator: function () {
     // return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust * this.avgCookie);
     var rand = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust * this.avgCookie);
     this.sumRandoms += rand;
@@ -125,7 +125,7 @@ var salmonCookieShopFourth = {
   maxCust: 38,
   avgCookie: 2.3,
   sumRandoms: 0,
-  randomNumberGenerator: function (min, max) {
+  randomNumberGenerator: function () {
     // return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust * this.avgCookie);
     var rand = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust * this.avgCookie);
     this.sumRandoms += rand;
@@ -161,7 +161,7 @@ var salmonCookieShopFifth = {
   maxCust: 16,
   avgCookie: 4.6,
   sumRandoms: 0,
-  randomNumberGenerator: function (min, max) {
+  randomNumberGenerator: function () {
 
     var rand = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust * this.avgCookie);
     this.sumRandoms += rand;
