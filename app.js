@@ -31,18 +31,17 @@ renderHeaderRow();
 var allShops = [];
 // class shop
 function Shop(location, minCust, maxCust, avgCookie) {
-  this.shopHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+
   this.location = location;
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgCookie = avgCookie;
   this.cookiePerHour = [];
   this.dailyLocationTotal = 0;
-  // this.cookiePerHour;
-  // add to the list of shops
+
   // count cookies
   this.countCookie = function () {
-    for (var i = 0; i < this.shopHours.length; i++) {
+    for (var i = 0; i < shopHours.length; i++) {
       var randomNumber = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust * this.avgCookie);
       this.cookiePerHour.push(randomNumber);
     }
@@ -67,7 +66,7 @@ Shop.prototype.render = function(){
   thEl.textContent = this.location;
   trEl.appendChild(thEl);
 
-  for (var i = 0; i < this.shopHours.length; i++) {
+  for (var i = 0; i < shopHours.length; i++) {
     var tdEl = document.createElement('td');
     tdEl.textContent = this.cookiePerHour[i];
     trEl.appendChild(tdEl);
@@ -85,8 +84,7 @@ var tokyo = new Shop('Tokyo', 3, 24, 1.2);
 var dubai = new Shop('Dubai', 11, 38, 3.7);
 var paris = new Shop('Paris', 20, 38, 2.3);
 var lima = new Shop('Lima', 2, 16, 4.6);
-// seattle.cookiePerHour();
-// seattle.totalPerDay();
+
 seattle.render();
 tokyo.render();
 dubai.render();
@@ -121,3 +119,48 @@ var totalRow = function () {
 };
 
 totalRow();
+
+
+var userForm = document.getElementById('user-form');
+userForm.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  console.log('event.target.inputElementNewLocation.value:', event.target.inputElementNewLocation.value);
+
+
+  this.location = event.target.inputElementNewLocation.value;
+  this.minCust = event.target.inputElementMinimumCustomers.value;
+  this.maxCust = event.target.inputElementMaximumCustomers.value;
+  this.avgCookie = event.target.inputElementMaximumCustomers.value;
+
+  var newLocation = new Shop(this.location, this.minCust, this.maxCust, this.avgCookie);
+  allShops.push(newLocation);
+
+  tableBody.removeChild(tableBody.lastChild);
+
+  newLocation.render();
+
+  totalRow();
+
+  alert(`New location is ${this.location} and the numbers of minimum customers: ${this.minCust}, maximum customers: ${this.maxCust}, average cookies: ${this.avgCookie}`);
+}
+
+//used validation instead those functions
+// if (isNaN(this.minCust)) {
+//   alert('Please enter a number');
+//   event.target.inputElementMinimumCustomers.value = null;
+
+// }
+// if (isNaN(this.maxCust)) {
+//   alert('Please enter a number');
+//   event.target.inputElementMaximumCustomers.value = null;
+
+// }
+// if (isNaN(this.avgCookie)) {
+//   alert('Please enter a number');
+//   event.target.event.target.inputElementMaximumCustomers.value = null;
+// }
+
+
