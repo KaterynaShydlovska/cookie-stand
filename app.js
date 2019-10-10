@@ -142,31 +142,15 @@ function handleSubmit(event) {
   var newLocation = new Shop(this.location, this.minCust, this.maxCust, this.avgCookie);
 
 
-  // allShops.push(newLocation);
-
   tableBody.removeChild(tableBody.lastChild);
 
   newLocation.render();
 
   totalRow();
 
-  // alert(`New location is ${this.location} and the numbers of minimum customers: ${this.minCust}, maximum customers: ${this.maxCust}, average cookies: ${this.avgCookie}`);
+  alert(`New location is ${this.location} and the numbers of minimum customers: ${this.minCust}, maximum customers: ${this.maxCust}, average cookies: ${this.avgCookie}`);
 }
 
-//used validation instead those functions
-// if (isNaN(this.minCust)) {
-//   alert('Please enter a number');
-//   event.target.inputElementMinimumCustomers.value = null;
 
-// }
-// if (isNaN(this.maxCust)) {
-//   alert('Please enter a number');
-//   event.target.inputElementMaximumCustomers.value = null;
-
-// }
-// if (isNaN(this.avgCookie)) {
-//   alert('Please enter a number');
-//   event.target.event.target.inputElementAverageCookie.value = null;
-// }
 
 
