@@ -127,15 +127,19 @@ userForm.addEventListener('submit', handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
 
+  console.log('event.target.inputElementMaximumCustomers.value:', event.target.inputElementMaximumCustomers.value);
+
   console.log('event.target.inputElementNewLocation.value:', event.target.inputElementNewLocation.value);
 
 
   this.location = event.target.inputElementNewLocation.value;
   this.minCust = event.target.inputElementMinimumCustomers.value;
   this.maxCust = event.target.inputElementMaximumCustomers.value;
-  this.avgCookie = event.target.inputElementMaximumCustomers.value;
+  this.avgCookie = event.target.inputElementAverageCookie.value;
 
   var newLocation = new Shop(this.location, this.minCust, this.maxCust, this.avgCookie);
+
+
   allShops.push(newLocation);
 
   tableBody.removeChild(tableBody.lastChild);
@@ -144,7 +148,7 @@ function handleSubmit(event) {
 
   totalRow();
 
-  alert(`New location is ${this.location} and the numbers of minimum customers: ${this.minCust}, maximum customers: ${this.maxCust}, average cookies: ${this.avgCookie}`);
+  // alert(`New location is ${this.location} and the numbers of minimum customers: ${this.minCust}, maximum customers: ${this.maxCust}, average cookies: ${this.avgCookie}`);
 }
 
 //used validation instead those functions
@@ -160,7 +164,7 @@ function handleSubmit(event) {
 // }
 // if (isNaN(this.avgCookie)) {
 //   alert('Please enter a number');
-//   event.target.event.target.inputElementMaximumCustomers.value = null;
+//   event.target.event.target.inputElementAverageCookie.value = null;
 // }
 
 
