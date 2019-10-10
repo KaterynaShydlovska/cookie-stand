@@ -21,6 +21,8 @@ var renderHeaderRow = function () {
   tdEl.textContent = 'Daily total';
   trEl.appendChild(tdEl);
 
+  trEl.className = 'headerRow';
+
   tableBody.appendChild(trEl);
 };
 
@@ -64,6 +66,7 @@ Shop.prototype.render = function(){
   var trEl = document.createElement('tr');
   var thEl = document.createElement('td');
   thEl.textContent = this.location;
+  thEl.className = 'shopLocation';
   trEl.appendChild(thEl);
 
   for (var i = 0; i < shopHours.length; i++) {
@@ -95,6 +98,7 @@ var totalRow = function () {
   var trEl = document.createElement('tr');
   var thEl = document.createElement('td');
   thEl.textContent = 'Total:';
+  thEl.className = 'shopLocation';
   trEl.appendChild(thEl);
 
   for (var i = 0; i < shopHours.length; i++) {
@@ -141,32 +145,29 @@ function handleSubmit(event) {
 
   var newLocation = new Shop(this.location, this.minCust, this.maxCust, this.avgCookie);
 
-
-  // allShops.push(newLocation);
-
   tableBody.removeChild(tableBody.lastChild);
 
   newLocation.render();
 
   totalRow();
+  closeForm();
 
-  // alert(`New location is ${this.location} and the numbers of minimum customers: ${this.minCust}, maximum customers: ${this.maxCust}, average cookies: ${this.avgCookie}`);
+  alert(`New location is ${this.location} and the numbers of minimum customers: ${this.minCust}, maximum customers: ${this.maxCust}, average cookies: ${this.avgCookie}`);
+}
+var hideButton = document.getElementById('hide');
+
+function openForm() {
+  userForm.style.display = "block";
+  hideButton.style.display = "none";
+  console.log(event);
+
 }
 
-//used validation instead those functions
-// if (isNaN(this.minCust)) {
-//   alert('Please enter a number');
-//   event.target.inputElementMinimumCustomers.value = null;
+function closeForm() {
+  userForm.style.display = "none";
+  hideButton.style.display = "block";
+}
 
-// }
-// if (isNaN(this.maxCust)) {
-//   alert('Please enter a number');
-//   event.target.inputElementMaximumCustomers.value = null;
 
-// }
-// if (isNaN(this.avgCookie)) {
-//   alert('Please enter a number');
-//   event.target.event.target.inputElementAverageCookie.value = null;
-// }
 
 
