@@ -126,21 +126,23 @@ userForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
+  console.log(event);
 
   console.log('event.target.inputElementMaximumCustomers.value:', event.target.inputElementMaximumCustomers.value);
 
   console.log('event.target.inputElementNewLocation.value:', event.target.inputElementNewLocation.value);
 
-
+  console.log('inputElementAverageCookie:', event.target.inputElementAverageCookie.value);
   this.location = event.target.inputElementNewLocation.value;
   this.minCust = event.target.inputElementMinimumCustomers.value;
   this.maxCust = event.target.inputElementMaximumCustomers.value;
   this.avgCookie = event.target.inputElementAverageCookie.value;
 
+
   var newLocation = new Shop(this.location, this.minCust, this.maxCust, this.avgCookie);
 
 
-  allShops.push(newLocation);
+  // allShops.push(newLocation);
 
   tableBody.removeChild(tableBody.lastChild);
 

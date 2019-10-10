@@ -12,7 +12,7 @@
   <form id="user-form">
     <fieldset>
       <label>Enter New Location:</label>
-      <input type ="text" id="inputElementNewLocation" type="text" placeholder="Type location here..."required>
+      <input type ="text" pattern="[A-Za-z]{1}" oninvalid="setCustomValidity('Please type letters here ')" id="inputElementNewLocation" type="text" placeholder="Type location here..."required>
       <label>Enter minimum customers per hour:</label>
       <input type="number" id="inputElementMinimumCustomers" type="text" placeholder="minimum customers..." required>
       <label>Enter maximum customers per hour:</label>
