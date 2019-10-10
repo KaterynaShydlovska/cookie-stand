@@ -126,17 +126,21 @@ userForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
+  console.log(event);
+
+  console.log('event.target.inputElementMaximumCustomers.value:', event.target.inputElementMaximumCustomers.value);
 
   console.log('event.target.inputElementNewLocation.value:', event.target.inputElementNewLocation.value);
 
-
+  console.log('inputElementAverageCookie:', event.target.inputElementAverageCookie.value);
   this.location = event.target.inputElementNewLocation.value;
   this.minCust = event.target.inputElementMinimumCustomers.value;
   this.maxCust = event.target.inputElementMaximumCustomers.value;
-  this.avgCookie = event.target.inputElementMaximumCustomers.value;
+  this.avgCookie = event.target.inputElementAverageCookie.value;
+
 
   var newLocation = new Shop(this.location, this.minCust, this.maxCust, this.avgCookie);
-  allShops.push(newLocation);
+
 
   tableBody.removeChild(tableBody.lastChild);
 
@@ -147,20 +151,6 @@ function handleSubmit(event) {
   alert(`New location is ${this.location} and the numbers of minimum customers: ${this.minCust}, maximum customers: ${this.maxCust}, average cookies: ${this.avgCookie}`);
 }
 
-//used validation instead those functions
-// if (isNaN(this.minCust)) {
-//   alert('Please enter a number');
-//   event.target.inputElementMinimumCustomers.value = null;
 
-// }
-// if (isNaN(this.maxCust)) {
-//   alert('Please enter a number');
-//   event.target.inputElementMaximumCustomers.value = null;
-
-// }
-// if (isNaN(this.avgCookie)) {
-//   alert('Please enter a number');
-//   event.target.event.target.inputElementMaximumCustomers.value = null;
-// }
 
 
