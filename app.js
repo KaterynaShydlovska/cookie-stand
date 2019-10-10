@@ -145,6 +145,7 @@ function handleSubmit(event) {
 
   var newLocation = new Shop(this.location, this.minCust, this.maxCust, this.avgCookie);
 
+
   tableBody.removeChild(tableBody.lastChild);
 
   newLocation.render();
@@ -161,6 +162,7 @@ function openForm() {
   hideButton.style.display = "none";
   console.log(event);
 
+
 }
 
 function closeForm() {
@@ -168,6 +170,8 @@ function closeForm() {
   hideButton.style.display = "block";
 }
 
+
+  
 
 
 
