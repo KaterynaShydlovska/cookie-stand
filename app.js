@@ -157,21 +157,19 @@ function handleSubmit(event) {
 }
 var hideButton = document.getElementById('hide');
 
+// eslint-disable-next-line no-unused-vars
 function openForm() {
-  userForm.style.display = "block";
-  hideButton.style.display = "none";
+  userForm.style.display = 'block';
+  hideButton.style.display = 'none';
   console.log(event);
 
 
 }
 
 function closeForm() {
-  userForm.style.display = "none";
-  hideButton.style.display = "block";
+  userForm.style.display = 'none';
+  hideButton.style.display = 'block';
 }
-
-
-  
 
 
 
